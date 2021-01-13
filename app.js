@@ -75,9 +75,6 @@ function onError(error){
     
 }
 
-/**
- * Http server onListening event
- */
 
 function onListening() {
     var addr = server.address();
@@ -85,15 +82,16 @@ function onListening() {
         'pipe' + addr :
         'pipe' + appConfig.port;
     logger.info('server listening on port' + addr.port, 'at onListening()', 10)
-    let db = mongoose.connect(appConfig.db.uri, {
-        useNewUrlParser: true,
+    
+    /**let db = mongoose.connect(appConfig.db.uri, {
+       * useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true
-    })
+    })*/
 }
 
-mongoose.connection.on('error', function (err) {
-    logger.error(err, 'error at mongoose.connection.error()', 10)
+/** mongoose.connection.on('error', function (err) {
+ *   logger.error(err, 'error at mongoose.connection.error()', 10)
 }) //end mongoose connection on error
 
 mongoose.connection.on('open', function(err) {
@@ -103,5 +101,5 @@ mongoose.connection.on('open', function(err) {
     logger.info("Successfully connected to the mongo database", "at mongoose.connection.on open()", 10)
 }
 }) //end mongoose connection on open
-
+*/
 module.exports = app;
