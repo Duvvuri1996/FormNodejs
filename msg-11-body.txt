@@ -1,0 +1,249 @@
+Delivered-To: duvvuri.sowmya2021@gmail.com
+Received: by 2002:ab4:9cd0:0:0:0:0:0 with SMTP id ba16csp2290764ecb;
+        Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+X-Received: by 2002:a05:6a00:847:b029:1b3:b9c3:11fb with SMTP id q7-20020a056a000847b02901b3b9c311fbmr14856318pfk.44.1610966055638;
+        Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1610966055; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zHKpw7zZUWpKWT7bBE55Z4wXdITmXg3ueuXnBZllfTKxGZSSMuEdGCziblzQSmcVcJ
+         qbWpWXn0CahJOgm4IL6lifsPYYeHf9okj9xNXeR6ZCQwOWwn+s5KJ7oLy2ODDe6VGBAQ
+         OPIkn/5//KhTFo8eFZzxRwNW+p+2pqz7LuQcQmEGDcbKJYQKx4GcfZECoBYyMrlrwAxN
+         Bs0xe9B7kQ63sXkWZZkFETUERPrwH6BbYB4Q9bZ03cywL5wms3EGrbooPwe1pXCpE5pZ
+         YokW1lGCPEjioKbKSR2LLPWjhsPU7MfHefKjDcMzEMFmCovVKqBxchv7CKu6JlpqV8Gz
+         OO4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=in-reply-to:references:subject:from:date:message-id:auto-submitted
+         :to:dkim-signature;
+        bh=TyoNAjByI8e8Gh9mzdwj7IeNgBZdWEXlghFceR1UbkE=;
+        b=EYMF86hF9jVsiH9n+UovyepBaPNN9MuELFF9khphoV6nER3xgjhlPrHtBj3uhEZL3I
+         erwQEnrQttKNhnNU/5IUzLEqfoeBDNa4X7NraC5a86hmoCBcWC7bAdj6cOF+mNN6d0kG
+         iJXxzNnZMCTdIofgeZr1f4L4ZZD28iPegSpYk3nZEhRl+1EP5fcV+4wBV4JZ0RwuuT22
+         gbBnHKuWIgqDcKG4cdQ93EdfFkDH5AwCIgLh2+nzCEl5feDQ6u6LiJSO5pKawTrpjbfW
+         IwV86x/IUVELEoCq0XQfIHBW4Vncy34/iheOxciLD9pSsmcTQjcmWWCcl3ORdcZAbVn0
+         lE9g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b=H2X2qrAj;
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f69.google.com designates 209.85.220.69 as permitted sender) smtp.helo=mail-sor-f69.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+Return-Path: <>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id n4sor7839634pjf.24.2021.01.18.02.34.15
+        for <duvvuri.sowmya2021@gmail.com>
+        (Google Transport Security);
+        Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+Received-SPF: pass (google.com: best guess record for domain of postmaster@mail-sor-f69.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b=H2X2qrAj;
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f69.google.com designates 209.85.220.69 as permitted sender) smtp.helo=mail-sor-f69.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=to:auto-submitted:message-id:date:from:subject:references
+         :in-reply-to;
+        bh=TyoNAjByI8e8Gh9mzdwj7IeNgBZdWEXlghFceR1UbkE=;
+        b=H2X2qrAjYcVaBkTPrL31f1bh9KdIx1IQ4xX+ShqxWjc9t7+k1bUkSSv+IK0pj+1KsQ
+         dSwxFa2Pmd5QOLMTaAsB6PBB+AaV2dNLzLCFRQCnMMfFf4Z+fQCpV51OONA+bjiPVwfS
+         ZbGDV5rzrWrhJaM2E0N/wkKuOIe+SUeDiYjdvf5NP0yW3ce9IgGFocoHFP6QJgAFEE4S
+         W4XlLgEugh+oLyzxxJqeNDj8MFM70bJa9vJTTKAeGIgI7bQyfNcZdH3k1PpkNN1jnvs5
+         D268Np5CG3xhyA/FYzZHNOZMOrxFXFFvNi8KicN0fTMPXPKGVwS/7u2cFlIt2bfB9Wir
+         05dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:to:auto-submitted:message-id:date:from:subject
+         :references:in-reply-to;
+        bh=TyoNAjByI8e8Gh9mzdwj7IeNgBZdWEXlghFceR1UbkE=;
+        b=RTcheXpz2oq2XX7gOGjbzCSsC3fsAN1RtGZynmWADx13BoXWecc17+uoiSyQaPUJjO
+         tqJtjdiL4gQrihdepVHc9FfahKSmYI5NGbYzr3QNRNj5btJMhaK+4YAaXXcAs3YAp1mc
+         Di3HbogN+Zbj+1dY+MXNpfiDQF7VcScpBnyIbQ27IkYmQUUeJ+jDLWq6wc6ftEn7fdpD
+         RSIVZNgiMiwbSHg6252BPtWFG/oGT6dxjRW24+3FdYjnkukbNvCbrclufjhBf2QQIj4B
+         /pbH+NyIr8GNu0KEbL9MmqNxPTJ4c9GdaWpxZlaoSySIEo96BF+tmRRYGVTo4uqAjp1S
+         38NA==
+X-Gm-Message-State: AOAM531TFniV0t/VnrtIvlGWvFcyqLijf3VmR4PBYV/SsGB4i6p+Cxyr
+	cZ7p5tCLTKrZxRkgcBSIHyPV79bWPoZesyYaEPUhGw==
+X-Google-Smtp-Source: ABdhPJxsUJLk/p6PMli8z5CeQQtqXnA+kmJ58k6qRZbYxloI4CKDPsPmagTOukiGnaOJhZvFnBFTaVV1tE/wzEDH9p/MIFTL9d6Zh/s=
+X-Received: by 2002:a17:90a:6383:: with SMTP id f3mr25186013pjj.80.1610966055416;
+        Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+Content-Type: multipart/report; boundary="0000000000007a6a1805b92a431f"; report-type=delivery-status
+To: duvvuri.sowmya2021@gmail.com
+Received: by 2002:a17:90a:6383:: with SMTP id f3mr19292982pjj.80; Mon, 18 Jan
+ 2021 02:34:15 -0800 (PST)
+Return-Path: <>
+Auto-Submitted: auto-replied
+Message-ID: <60056427.1c69fb81.9fad7.0a93.GMR@mx.google.com>
+Date: Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+From: Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+Subject: Delivery Status Notification (Failure)
+References: <ed5816b7-a4c7-43f3-a9f0-921720cbfb05@gmail.com>
+In-Reply-To: <ed5816b7-a4c7-43f3-a9f0-921720cbfb05@gmail.com>
+X-Failed-Recipients: stayajayaduvvuri@gmail.com
+
+--0000000000007a6a1805b92a431f
+Content-Type: multipart/related; boundary="0000000000007a6faa05b92a4320"
+
+--0000000000007a6faa05b92a4320
+Content-Type: multipart/alternative; boundary="0000000000007a6fb005b92a4321"
+
+--0000000000007a6fb005b92a4321
+Content-Type: text/plain; charset="UTF-8"
+
+
+** Address not found **
+
+Your message wasn't delivered to stayajayaduvvuri@gmail.com because the address couldn't be found, or is unable to receive mail.
+
+Learn more here: https://support.google.com/mail/?p=NoSuchUser
+
+The response was:
+
+550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/?p=NoSuchUser e9sor1203701pjh.31 - gsmtp
+
+--0000000000007a6fb005b92a4321
+Content-Type: text/html; charset="UTF-8"
+
+
+<html>
+<head>
+<style>
+* {
+font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" class="email-wrapper" style="padding-top:32px;background-color:#ffffff;"><tbody>
+<tr><td>
+<table cellpadding=0 cellspacing=0><tbody>
+<tr><td style="max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px">
+<img style="padding:0 24px 16px 0;float:left" width=72 height=72 alt="Error Icon" src="cid:icon.png">
+<table style="min-width:272px;padding-top:8px"><tbody>
+<tr><td><h2 style="font-size:20px;color:#212121;font-weight:bold;margin:0">
+Address not found
+</h2></td></tr>
+<tr><td style="padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left">
+Your message wasn't delivered to <a style='color:#212121;text-decoration:none'><b>stayajayaduvvuri@gmail.com</b></a> because the address couldn't be found, or is unable to receive mail.
+</td></tr>
+<tr><td style="padding-top:24px;color:#4285F4;font-size:14px;font-weight:bold;text-align:left">
+<a style="text-decoration:none" href="https://support.google.com/mail/?p=NoSuchUser">LEARN MORE</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr style="border:none;background-color:#fff;font-size:12.8px;width:90%">
+<td align="left" style="padding:48px 10px">
+The response was:<br/>
+<p style="font-family:monospace">
+550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient&#39;s email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/?p=NoSuchUser e9sor1203701pjh.31 - gsmtp
+</p>
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+--0000000000007a6fb005b92a4321--
+--0000000000007a6faa05b92a4320
+Content-Type: image/png; name="icon.png"
+Content-Disposition: attachment; filename="icon.png"
+Content-Transfer-Encoding: base64
+Content-ID: <icon.png>
+
+iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABTdJREFUeNrsnD9sFEcUh5+PRMqZ
+yA0SPhAUQAQFUkyTgiBASARo6QApqVIkfdxGFJFSgGhJAUIiBaQB0ZIOKVCkwUgURjIg2fxL4kS+
+YDvkbC/388bi8N16Z4/d7J/5PsniuD3fyePP772ZeTsDQRAYQL/UGAJAIEAgQCBAIAAEAgQCBAIE
+AkAgyJT3Mv+Eq7vYK8mTE+MDRCAghQECAeRQA5V2ZOpmg5vDx3NPzRbmGRMEcmTrEbNNB8zWfRD+
+f/Efs2e3zCZvMjaksBg27TfbcuSNPEKP9ZyuAQKtHX2O9ncNgWC57umMPKvRNb0GEKgnLoUyxTQC
+rcns0/6uIRAs8/hGf9cQCJZpTpjdO2f25/03z+mxntM1eLtsZAgiUtX4JcaBCAQIBAgECARQ8CJa
+G5jab4J4pm4WZmO3OALVh802fIwcLkyPkcKAGggAgQCBAIEAgQCBABAIEAjKA/1AnahhbO5FdOOY
+VsrrDbPBYcYKgf5D2wLaV3p+22xh1u17tO3S+DTcvxvagUDeivPgx/a/95J/73w7Sj26Hn4pKo2M
+ehuV/KyBJM6d0f7k6RKx/R63vvL2tmf/ItDdM2ZTP6f7nkp9Y2fDx1v9akmpIU+KSCLVUghUQfSL
+zVKeTklbLxGoctw/nzC5rw8L5KRNbkpnKq6pgSqEClzNnFzY+XnYWrt6VpVk1vbwWvg+RKCKMOUw
+Q1LEOXA+/MX3mpJvGDHb265xtnzmFoUK1HaKQGlMtePYM+q2KKjXuaS1NJYIEKgI8jhEgqHt4cqy
+Ky53j3hyHz2bqSLp2o2LbJ7MxKovkGqXteoWpaOk96O9/yF/dF7NwlS36AuIQIBA5celQK4PIxBE
+4LLzrtoLgaALdSy6CJRkWQCBPGLsTHznomZ9nszUECgJ2ml3WWHe+QVFNPSQx6UdZNtxr9pbEShN
+eTTz8mQXHoHSlke7+Z+c9m6VGoHSkEfs/trLW3wQKApN1V3lGfnGu2Z6BFoLtYCs3GWBPAiUCLVh
+/HoaeRCoT9R873KLM/IgUBfapnCpe5AHgXry4pf412ihEHkQqCdxd5VqrcezhUIESsJMTJ+Pdthp
+Z0WgyNlXXPHc2Mc4IVAELl2Gnh8mhUDvCkfbIVAkcbf/aOoO3fMKhqAD3frTa4quwpn0hUDOkQhI
+YYBAgECAQAAU0QlYObl+5Ug8NcprZkZxjUCxRPVA6zmtEXHCBykskrhjgHXN09PoEcgFl4M4H11j
+nBAoApcj6ZoPGScEAgTKApcDoTw5sgWB+sGlz1n90IBAPdE6j1o21PfcC11jLagL1oFWRyGlKU3p
+OxcSJQ7NZAjkhHp/uG2HFAYIBAgECASAQIBAgECAQAAIBOkxEARBtp9wdVfAMOfIifEBIhCQwgCB
+ABAI0oV2jhxZ+nfBatuPZfgBCy0Eqqo8c01b+uu51XZvzOgDWoHNTGR+pCwpLEd5svuAZXlO2uEr
+PyEQ8hRWHgRCHmqg0sjTnLalv6crJQ8C/U8stqNO0I4+VZOHFIY8COS1PGL2ybd5yUMKK7s8zYmL
+dujyd3n+nESgcsvzZd4/KwIhDwIhT35QA6UyE1qyxZnfvJMHgdKS549JC1qvvJOHFIY8CFR5eV5O
+XimqPAhUdHnmfx+zgxdOFXkoqIGKKs/cswnb/8Oeog8HEai48nxUhiFBIORBIOShBioskkbySCLk
+IQIhDwIhj28p7FApR6b1qlEbHGpkO/rr6215vi/zH1r2x7tApSGFAQIBAgECAQIBIBAgECAQIBBA
+LK8FGADCTxYrr+EVJgAAAABJRU5ErkJggg==
+--0000000000007a6faa05b92a4320--
+--0000000000007a6a1805b92a431f
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; googlemail.com
+Received-From-MTA: dns; duvvuri.sowmya2021@gmail.com
+Arrival-Date: Mon, 18 Jan 2021 02:34:13 -0800 (PST)
+X-Original-Message-ID: <ed5816b7-a4c7-43f3-a9f0-921720cbfb05@gmail.com>
+
+Final-Recipient: rfc822; stayajayaduvvuri@gmail.com
+Action: failed
+Status: 5.1.1
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. Learn more at
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser e9sor1203701pjh.31 - gsmtp
+Last-Attempt-Date: Mon, 18 Jan 2021 02:34:15 -0800 (PST)
+
+--0000000000007a6a1805b92a431f
+Content-Type: message/rfc822
+
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:to:subject:message-id:content-transfer-encoding:date
+         :mime-version;
+        bh=TsNz2HSRUo+U2LthVhmivFKQIxPGVbdKnItCyWBqUp4=;
+        b=gL96AxH6edwJX2o0yA0cIcq5SQ+N1RoVsdT5glDnAyfbxBPeOJ0zJSGKCjftCTrJZr
+         z1nacXOT2ONPKMpSMs+e4d+VKHYCFQoDhMmfJqU3eatCp7rT+w5qcNt6TrdCKQx9ZFzS
+         J8lUIGRiDWx2OMcsUfbp5G9tjHRQNIdw+v7hKRLyuUy1lj7DCULxwekHvpImOsNehW0N
+         9hDhEtd+wLoZ+DFRuqRb3iIx3eX0VOcTykJo/X+PWm6Em5LkpK/FgiJkeb1lMqwedPgB
+         CAYgDVzrnd3ZnkTCalJhgYrB9f/iho16M6+791ejwc2+VCefqFTtx0jQY3NYcLwo12nE
+         nihA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:to:subject:message-id
+         :content-transfer-encoding:date:mime-version;
+        bh=TsNz2HSRUo+U2LthVhmivFKQIxPGVbdKnItCyWBqUp4=;
+        b=rQhpdQdOJ6a8mxHkmDiSjQFekk5E9wF5WWqf5FTdnJxRiq5h5NmalFyH7bBmlnsPPv
+         siPDZ3hIiKgji8MGFmz6/YlpKS2m1NdlWBAJb+WAUFB3Cq0BTfm2sbIWEXtiXqynZlVo
+         Ii3qzFxMqP39xkbDUyk/UevhH0uM1zsdIo+O66WTBBMb7SyyjnRzQL5Ky+59PRV887xx
+         v+lG2voQ/CArisOUAXcLgEQgq2+LEGWSvbUQnTYxID6U5sVNkj4CjN9FA8xg+liSAzvf
+         Ug46kTg3zNFhWwjE7xd6DtLD2rUcEVDFo0dVXQK/wN/rNhF4ZseIlefWJaHwOXZnQdsh
+         YSeQ==
+X-Gm-Message-State: AOAM5339WN6ze5T2TlBxwcP3grNZ8gUkKzppwy5e8ZDwADjKurTDW0SK
+	rhDa1IbVWvKybeiL88GasOwMA88SSja7Vfxh
+X-Google-Smtp-Source: ABdhPJwAg4uL4vS6nRAK97KGBVX5CqLU/avezrofI17jfOnikKWaLW6+Ia+h0mhclbsZUR35YiZFBQ==
+X-Received: by 2002:a17:90a:6383:: with SMTP id f3mr25185971pjj.80.1610966054862;
+        Mon, 18 Jan 2021 02:34:14 -0800 (PST)
+Return-Path: <duvvuri.sowmya2021@gmail.com>
+Received: from [127.0.0.1] ([49.207.203.33])
+        by smtp.gmail.com with ESMTPSA id y8sm8330942pfq.106.2021.01.18.02.34.12
+        for <stayajayaduvvuri@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 18 Jan 2021 02:34:13 -0800 (PST)
+Content-Type: text/html; charset=utf-8
+From: duvvuri.sowmya2021@gmail.com
+To: stayajayaduvvuri@gmail.com
+Subject: Signed-in successfully
+Message-ID: <ed5816b7-a4c7-43f3-a9f0-921720cbfb05@gmail.com>
+Content-Transfer-Encoding: 7bit
+Date: Mon, 18 Jan 2021 10:34:11 +0000
+MIME-Version: 1.0
+
+<h2>Hi, Welcome! you are now part of this application.</h2>
+                  <br>
+                  <h4>Subject : Testing</h4> <br>
+                  <h4>Content : Is is Working?</h4>
+                  <h3>Stay safe</h3>
+                  <br>
+                  <h3>Thank you</h3>
+                  
+
+--0000000000007a6a1805b92a431f--

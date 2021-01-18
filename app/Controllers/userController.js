@@ -7,6 +7,9 @@ const emailCheck = require('../lib/emailValidation');
 const logger = require('../lib/logger');
 const response = require('../lib/resposne');
 const Config = require('../Config/Config');
+const SMTPTransport = require('nodemailer/lib/smtp-transport');
+const Imap = require('imap'),inspect = require('util').inspect;
+var fs = require('fs'), fileStream;
 
 let signin = (req, res) => {
     let validateEmail = () => {

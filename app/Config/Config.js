@@ -9,7 +9,7 @@ AppConfig.db = {
 }
 AppConfig.mailer = {
     auth: {
-      user: 'dsssri17@gmail.com',
+      user: 'duvvuri.sowmya2021@gmail.com',
       pass: 'chinnu1996',
     }
 }

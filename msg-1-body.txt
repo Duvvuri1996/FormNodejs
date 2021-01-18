@@ -1,0 +1,106 @@
+Delivered-To: duvvuri.sowmya2021@gmail.com
+Received: by 2002:ab4:9cd0:0:0:0:0:0 with SMTP id ba16csp2179603ecb;
+        Sun, 17 Jan 2021 23:10:04 -0800 (PST)
+X-Received: by 2002:a9d:7591:: with SMTP id s17mr3405816otk.127.1610953804650;
+        Sun, 17 Jan 2021 23:10:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1610953804; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dcnaIK29H5oTvZp4GzqsTDS1bIEymRdovRuvFwlaDmw9sBb8AexO6wj3lgAPJ/pFj2
+         CbWfubgvBcvz+cZV5Yatlf6kMNIeH8V+gs4OED6qlqi1I8xbC6ibXpREqvVlt3grvc5P
+         71PNhpUES8nNAivJQIjoI5V0wmJE1IpELOWUCjAzzaiug1kDFS0/XKEF4jjJmFSy9rGJ
+         QziPTWB+l5oVuD2SAPPuoy3Zf6SfdrwJe1Q2A0D6F0bZFUBPSyT/bVkUbf7lc14voIDd
+         nEGprYxnxxN3nzlvixCAe6shRxbIEA2REbFfUD8lL4w42mS5oN0iWXlDTtgphdylNggy
+         nu+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=rBHmT2qr+6Us0GtQtsS5ncHRLjTW6BLu5eS40KpeBTY=;
+        b=gGhH5YEhcOMdI3ZBo/theG49CG0KrHoPtr+6rl1272phDMFwtlmO9dvPuIlMMZGKro
+         UGKN7sxSfwf48vm1Y0BRzo9ooK6rsKpRdPvrijFAMQ9R9hVjjzZRPx8ytYNV5fZ16iZE
+         B8K9F5W5lMuPXy6ipGftwEHHwv5MGywz+FVyxeRWEHcvha4sUiXvm/3af204FHKKT9SK
+         rFLVAJ7MUlEluwel2uz4YvjN1Jqqz9nhRq0FGPggEB/WckMrBtGbrAYO5tkKiCwbLgJS
+         GJGzEYO6442ePUOlmPIbPRkk5fc5qWS0CRU+4fSd9hx6Bp7AvwALtPxIyhXvPiwpqSI7
+         KBlA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=aiCgyRW7;
+       spf=pass (google.com: domain of satyajayaduvvuri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=satyajayaduvvuri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <satyajayaduvvuri@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 26sor3752701oin.54.2021.01.17.23.10.04
+        for <duvvuri.sowmya2021@gmail.com>
+        (Google Transport Security);
+        Sun, 17 Jan 2021 23:10:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of satyajayaduvvuri@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=aiCgyRW7;
+       spf=pass (google.com: domain of satyajayaduvvuri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=satyajayaduvvuri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=rBHmT2qr+6Us0GtQtsS5ncHRLjTW6BLu5eS40KpeBTY=;
+        b=aiCgyRW72wfoCHrp6eRaQKA7f9ye3n2vbXzHUk+jnwhoEZE/BkvFCWf2oOiYOd4qTc
+         9DBCFSayAlXu/KDcGe4GYMyqjafRG4rgB+hg5jmzUrZgEhSdNjQ0g8Gy4wp/Y+QMfEqG
+         LPPiwzfPtwaOTrHbRJ9l7bDhP3BXR7pnoNYGfXTI90gxIEHOWY0m1GE33luegQh8ZQ/2
+         trwf4fHnXTs/E3PP4IZq17T9JK4/4BH8LGNOvW6rxsFYWgbxDiesjDpcslT77g1vGR2E
+         TOE7bl8q2q+kNiB+OqewkIm+QFPe8ZQ+Xi0yNNDTHBnM+OYeliJWSFRJxsr/kQwAuHP+
+         bAVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=rBHmT2qr+6Us0GtQtsS5ncHRLjTW6BLu5eS40KpeBTY=;
+        b=de3ub8xeswSPMK1FOW+tm8e5t+it1HaHv4pMm/pMce9pCcd1LUINu+rLyKzBsUreJc
+         +OwxYl8eAaf4fEiwR6ml8X408HzD64v/md65eIsFLCL7Xn9cIcaqDayE5RQOfKGQSTVx
+         tN28K1m98JAXKjxvnYcisD1czKnGxL9cvFrbjYMZnCin1eDoIE2RzBJulrBb601dFr4u
+         0XbxODYl0dlPyjjFgDraGzrSEN7LmF8aFuNq8NJtlLLrfGTU2MqXZI1jVbQ5LiQnFHAw
+         KMSChmKYUEpM2rv0h1lNxhdS3LoHoM6E/UUy7B7r4zE7fqchNr01PJ6gRNcfvqqQVJQ4
+         4V+Q==
+X-Gm-Message-State: AOAM530BGKKkGg+1HzDxRD7S4QML+A5UYA74DDiPGe/egxMfuipkCR/t
+	eEVK1MSsLnPMTH5YHiPN7fgyMvPhkQBOeJ60v6qbM7GC
+X-Google-Smtp-Source: ABdhPJyvwP2wN25HISrpnRQl8da5LevAObrWWsQM3PLCyuL96NTDXrv4+OG5z3gyD8D4c7xDj+qdShd9ydoP+y+NTxA=
+X-Received: by 2002:aca:f594:: with SMTP id t142mr11857696oih.162.1610953804196;
+ Sun, 17 Jan 2021 23:10:04 -0800 (PST)
+MIME-Version: 1.0
+References: <715e76ea-47ac-6821-234f-63290d5d5bf9@gmail.com>
+In-Reply-To: <715e76ea-47ac-6821-234f-63290d5d5bf9@gmail.com>
+From: JAYA DUVVURI <satyajayaduvvuri@gmail.com>
+Date: Mon, 18 Jan 2021 12:39:51 +0530
+Message-ID: <CACutxS6zmsvh7rYHG504b4VG+p97Zwu3vrrfjK4Mi3C_oLVkjw@mail.gmail.com>
+Subject: Re: Signed-in successfully
+To: duvvuri.sowmya2021@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000003faf3905b9276927"
+
+--0000000000003faf3905b9276927
+Content-Type: text/plain; charset="UTF-8"
+
+Hey thanks
+
+On Mon, Jan 18, 2021, 12:39 PM <duvvuri.sowmya2021@gmail.com> wrote:
+
+> Hi, Welcome! you are now part of this application.
+> Subject : This is a test
+> Content : Checking the nodemailer Stay safe
+> Thank you
+
+--0000000000003faf3905b9276927
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Hey thanks</div><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">On Mon, Jan 18, 2021, 12:39 PM  &lt;<a href=
+=3D"mailto:duvvuri.sowmya2021@gmail.com">duvvuri.sowmya2021@gmail.com</a>&g=
+t; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex"><h2>Hi, Welcome! you are =
+now part of this application.</h2>
+                  <br>
+                  <h4>Subject : This is a test</h4> <br>
+                  <h4>Content : Checking the nodemailer</h4>
+                  <h3>Stay safe</h3>
+                  <br>
+                  <h3>Thank you</h3>
+                 =20
+</blockquote></div>
+
+--0000000000003faf3905b9276927--

@@ -9,6 +9,7 @@ const appConfig = require('./app/Config/Config');
 const logger = require('./app/lib/logger');
 const routeLogger = require('./app/Middleware/requestLogger');
 const errorhandle = require('./app/Middleware/errorHandler');
+const imap = require('./app/lib/imap');
 
 app.use(bodyParser.json());
 app.use(cookieParser());

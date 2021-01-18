@@ -1,0 +1,181 @@
+Delivered-To: duvvuri.sowmya2021@gmail.com
+Received: by 2002:ab4:9cd0:0:0:0:0:0 with SMTP id ba16csp2324369ecb;
+        Mon, 18 Jan 2021 03:28:42 -0800 (PST)
+X-Received: by 2002:a05:6638:e:: with SMTP id z14mr10063360jao.22.1610969322170;
+        Mon, 18 Jan 2021 03:28:42 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1610969322; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JBiAKEXs26GH54KnIfwJ3/LuAvH1kXZ1PQLkIhhG5a8QDHKCLkmKe857KTbJnfMWtd
+         AuVykNv9daf7qBSlU9N/CRUIejCr772/FLY0H3yQ1fq3skW0BztiXTbsyrhm36FZArSi
+         qZlpw2TpPZSIiI1tTJPE9HlhzdriZ0r2cDqiAz7A1wfhHuCr4hH90gKdUBeeaNpNLjYo
+         oHkOqv4IIDkv7P87dKoReV/Ecjg3pVv8gd1NpNOSTskqH7K/CtDjS3ZqkoHsRaPOct1M
+         sal02W8bxs0OPEMpSXeJZ3f3EuWI9xSgCpqXaqfB30ThFSnMvMAZtYNHqhDth2qs0l95
+         sWcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:date:mime-version:dkim-signature;
+        bh=dPxN5grJnN/F5s1KG5l6WiPFURbyDOXr9ppbZhXIipM=;
+        b=Ns8qBgeK3bBCcqylC750zdoJU4Nm6KM+N/YXZVs1aKiAJW0tfmYPh9gfKpSDsERC98
+         FtuNKlWWiikLeQi6J07qA8swG6WXB36KaF3TnEHEOqbLBPdihvFVP1STXrjkTgsAT+1Z
+         1iwQB+BU9IpeBUiLqkfvs3p8slD+oQ1uaXppHb480b+iSSI5g2kx517MpNv7evuEyLEb
+         JrggRSM9VnqQJOu1Hus1GdSpD/uVT1kcD11hFVVhBuctwmHgMXJJdyPPcdFHQkP6d7M2
+         tdyzYTsQDtqx2NWj1x8wywwWv9+BOAoFRT1FCkMiZu17vREwjAIdExVbeTz8DL7IFCbN
+         W2HA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=FNven15F;
+       spf=pass (google.com: domain of 36xafyb0kaoy7tibnwzu5wbqnqkibqwva-vwzmxtgowwotm.kwu@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=36XAFYB0KAOY7TIbNWZU5WbQNQKIbQWVa-VWZMXTgOWWOTM.KWU@chime-notifications.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <36XAFYB0KAOY7TIbNWZU5WbQNQKIbQWVa-VWZMXTgOWWOTM.KWU@chime-notifications.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id k11sor8638001ion.29.2021.01.18.03.28.42
+        for <duvvuri.sowmya2021@gmail.com>
+        (Google Transport Security);
+        Mon, 18 Jan 2021 03:28:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of 36xafyb0kaoy7tibnwzu5wbqnqkibqwva-vwzmxtgowwotm.kwu@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=FNven15F;
+       spf=pass (google.com: domain of 36xafyb0kaoy7tibnwzu5wbqnqkibqwva-vwzmxtgowwotm.kwu@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=36XAFYB0KAOY7TIbNWZU5WbQNQKIbQWVa-VWZMXTgOWWOTM.KWU@chime-notifications.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:date:message-id:subject:from:to;
+        bh=dPxN5grJnN/F5s1KG5l6WiPFURbyDOXr9ppbZhXIipM=;
+        b=FNven15FeJ6zgh8yj8xrrdY7C4ZbI43c/XdOqBTK13YHdOuYQid3qNg/baMO5IhUrr
+         U5DzXpXg87yr0vYtLK7W/XRbFq6eRgOfCU/Iyp5zBqp6BggIYAyepIHeqD+ohuvFe61z
+         ryrdS3dWSoo20ih8G8xj9R43/RtZRP8ThAc6xSgi8lfoWRzDz0uPgmEBGehQ7vvHDAj7
+         gpBCgc8fKnl/LDTPi8pMaD5oTeE8cgXAHr49n3lPZ63X2b1S7CijIkBlPZ3Pkuf+b7/F
+         WrUexkRslehVNvNkLOnafKuCLWw33V7nicQv/kZcezNu+acSjfIIOhAoK5CeuPWWxwXQ
+         NhFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+        bh=dPxN5grJnN/F5s1KG5l6WiPFURbyDOXr9ppbZhXIipM=;
+        b=ogLliFbVpyg1DWwuuHbiqWArEZ4AjqwypFapC0+3g12OlukH/9I3N1B+AnJfX3DS+X
+         X6si7+6XlX2qhzYRrnHeqxBPXHNOnStIEiGloUy70+hBfqj2/PT1C391BW4Bz40ZtUqA
+         E3gHWRI0GJk9otOo5qHxzxVRgrhId3kgxOEQ+tA67GdedcJM6XKcInhRs/V08Q0WhiVV
+         n3EVcwecgtNvqADkp6yWTCOKpSdIp11J0C0JzcGAKWqwwfYJvOt8OvxCqEut5GKG2GDd
+         KBrISOV7nDQ7HiraoR5McD4dvK4jsBfSIa8fismhf2t/dVVG0I3fMs+Ta8X/5nrqu0AP
+         oxhA==
+X-Gm-Message-State: AOAM5316dcfelR2gSsE/7xZiTAyE0R02jyP8yqFhDBG5bvOKJ/Q+HwPB
+	FvuRdhbBuqwuf/p/7zMhCvbve/OLIKZgEJOZkQ==
+X-Google-Smtp-Source: ABdhPJw3q/Zns38xqTnrTUlejMRHxESHdCiLFRl0fc6Uvg0SxAGJNzMSe55DmQ7ZUb3i2YXGWjJjkYqjzdSleicJpSPn
+MIME-Version: 1.0
+X-Received: by 2002:a5d:9041:: with SMTP id v1mr603701ioq.155.1610969321891;
+ Mon, 18 Jan 2021 03:28:41 -0800 (PST)
+Date: Mon, 18 Jan 2021 03:28:41 -0800
+X-Notifications: 8512b366c5c00000
+Message-ID: <jJF1H_m7uBAdtyIAh9Oh6A@notifications.google.com>
+Subject: Your project form-302110 has been shut down
+From: Platform Notifications <PlatformNotifications-noreply@google.com>
+To: duvvuri.sowmya2021@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000002ced1505b92b0611"
+
+--0000000000002ced1505b92b0611
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+UHJvamVjdCBQZXJtYW5lbnQgRGVsZXRpb24gV2FybmluZw0KDQoNCkRlYXIgRGV2ZWxvcGVyLA0K
+DQpZb3VyIEdvb2dsZSBDbG91ZCBwcm9qZWN0IGZvcm0tMzAyMTEwIHdhcyBzaHV0IGRvd24gb24g
+SmFudWFyeSAxOCwgMjAyMSAgDQoxMToyODo0MCBBTSBVVEMuDQoNClNodXQtZG93biBwcm9qZWN0
+cyBhbmQgdGhlIGRhdGEgc3RvcmVkIGluIHRoZW0gbWF5IGJlIHJlY292ZXJlZCBmb3IgYSAgDQps
+aW1pdGVkIHRpbWUgYmVmb3JlIHRoZSBwcm9qZWN0cyBhcmUgcGVybWFuZW50bHkgZGVsZXRlZC4g
+SWYgeW91J2QgbGlrZSB0byAgDQpyZWNvdmVyIHlvdXIgcHJvamVjdCwgeW91IG11c3QgY2FuY2Vs
+IHRoZSBwcm9qZWN0J3MgcGVybWFuZW50IGRlbGV0aW9uICANCmJlZm9yZSBGZWJydWFyeSAxNywg
+MjAyMSAxMToyODo0MCBBTSBVVEMuDQoNClRvIHJlY292ZXIgeW91ciBzaHV0LWRvd24gcHJvamVj
+dDoNCg0KVmlzaXQgdGhlIFJlc291cmNlcyBwZW5kaW5nIGRlbGV0aW9uIHBhZ2UuDQpTZWxlY3Qg
+dGhlIHByb2plY3QgeW91IHdhbnQgdG8gcmVjb3ZlciwgYW5kIGNsaWNrIFJlc3RvcmUuDQpJbiB0
+aGUgY29uZmlybWF0aW9uIGRpYWxvZywgY2xpY2sgUmVzdG9yZS4NCg0KDQpJZiB5b3UgY2Fubm90
+IHJlY292ZXIgeW91ciBwcm9qZWN0IGJ5IGZvbGxvd2luZyB0aGUgaW5zdHJ1Y3Rpb25zIGFib3Zl
+LCB5b3UgIA0KY2FuIHRyeSByZXN0b3JpbmcgaXQgdXNpbmcgdGhlIGdjbG91ZCB1bmRlbGV0ZSBj
+b21tYW5kLg0KDQpJZiB5b3UgdGFrZSBubyBhY3Rpb24gYnkgRmVicnVhcnkgMTcsIDIwMjEgMTE6
+Mjg6NDAgQU0gVVRDLCB5b3Ugd2lsbCBiZSAgDQp1bmFibGUgdG8gcmVjb3ZlciB5b3VyIHByb2pl
+Y3QuDQoNCklmIHlvdSBoYXZlIGFueSBxdWVzdGlvbnMsIHBsZWFzZSB2aXNpdCBHb29nbGUgQ2xv
+dWQgUGxhdGZvcm0gUmVzb3VyY2UgIA0KTWFuYWdlciBEb2N1bWVudGF0aW9uIG9yIGNvbnRhY3Qg
+R29vZ2xlIENsb3VkIFBsYXRmb3JtIFN1cHBvcnQuDQoNCkNvcmRpYWxseSwNClRoZSBHb29nbGUg
+Q2xvdWQgUGxhdGZvcm0gVGVhbQ0KDQoNCsKpIDIwMTkgR29vZ2xlIExMQy4gMTYwMCBBbXBoaXRo
+ZWF0cmUgUGFya3dheSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMNCg0KWW91IGhhdmUgcmVjZWl2
+ZWQgdGhpcyBtYW5kYXRvcnkgZW1haWwgc2VydmljZSBhbm5vdW5jZW1lbnQgdG8gdXBkYXRlIHlv
+dSAgDQphYm91dCBpbXBvcnRhbnQgY2hhbmdlcyB0byB5b3VyIEdvb2dsZSBwcm9qZWN0LCBwcm9k
+dWN0IG9yIGFjY291bnQuDQoNCg0K
+--0000000000002ced1505b92b0611
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<div style=3D"color:#333;margin:0;width:600px;height:720px;font-family:Aria=
+l,sans-serif;line-height:140%;padding:0 30px;max-width:600px;margin:auto;">
+  <p>
+    <img style=3D"padding:10px;height:54px;width:150px;"
+         src=3Dhttps://www.google.com/images/branding/googlelogo/2x/googlel=
+ogo_color_150x54dp.png
+         alt=3D"" />
+  </p>
+
+  <p style=3D"font-size:20px/24px;color:#dd4b39;padding:10px;padding-bottom=
+:0;">
+    <strong>Project Permanent Deletion Warning</strong>
+  </p>
+
+  <hr style=3D"width:600px;border:1px solid #ebebeb;"/>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">Dear Developer,=
+</p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    Your Google Cloud project form-302110 was shut down on January 18, 2021=
+ 11:28:40 AM UTC.
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    Shut-down projects and the data stored in them may be recovered for a l=
+imited time before the projects are permanently deleted.  If you=E2=80=99d =
+like to recover your project, you must cancel the project=E2=80=99s permane=
+nt deletion before February 17, 2021 11:28:40 AM UTC.
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    To recover your shut-down project:
+  <ol style=3D"font-size:13px;">
+    <li>Visit the <a href=3Dhttps://console.developers.google.com/project?p=
+endingDeletion=3Dtrue&organizationId=3D0>Resources pending deletion</a> pag=
+e.</li>
+    <li>Select the project you want to recover, and click <strong>Restore</=
+strong>.</li>
+    <li>In the confirmation dialog, click <strong>Restore</strong>.</li>
+  </ol>
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    If you cannot recover your project by following the instructions above,=
+ you can try restoring it using the <a href=3Dhttp://cloud.google.com/sdk/g=
+cloud/reference/projects/undelete/>gcloud undelete command</a>.
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    If you take no action by <strong>February 17, 2021 11:28:40 AM UTC</str=
+ong>, you will be unable to recover your project.
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    If you have any questions, please visit <a href=3Dhttps://cloud.google.=
+com/resource-manager/>Google Cloud Platform Resource Manager Documentation<=
+/a> or contact <a href=3Dhttps://support.google.com/cloud/answer/6282346>Go=
+ogle Cloud Platform Support</a>.
+  </p>
+
+  <p style=3D"width:580px;font-size:13px;margin-left:10px;">
+    Cordially,<br/>      The Google Cloud Platform Team
+  </p>
+  <div style=3D"height:65px;background-color:#f5f5f5;padding:10px;color:#66=
+6;font-size:11px;line-height:120%;width:580px;">
+    <p>        &copy; 2019 Google LLC.  1600 Amphitheatre Parkway, Mountain=
+ View, CA 94043
+    </p>
+    <p>
+      You have received this mandatory email service announcement to update=
+ you about important        changes to your Google project, product or acco=
+unt.
+    </p>
+  </div>
+</div>
+</html>
+--0000000000002ced1505b92b0611--
