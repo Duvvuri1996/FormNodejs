@@ -23,6 +23,8 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 
+/home/sriram/Sowmya-Project/Form/backend/app/lib/imaps.js
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json

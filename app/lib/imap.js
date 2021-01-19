@@ -1,22 +1,19 @@
-// Step 1: Include required modules
 var Imap = require('imap'),
     inspect = require('util').inspect; 
-    var fs = require('fs'), fileStream; 
+    var fs = require('fs'), fileStream;
 const Config = require('../Config/Config');
 
 // Step 2: Declaring new imap object
 var imap = new Imap({
-  user: Config.mailer.auth.user, // example: aakanksha.jain8@gmail.com
-  password: Config.mailer.auth.pass, // Remember, using just password for authentication will only work if you have less secured apps enabled 
-  host: 'imap.gmail.com', 
-  port: 993,
+  user: Config.mailer.auth.user,
+  password: Config.mailer.auth.pass,
+  host: 'pop.gmail.com', 
+  port: 995,
   tls: true,
   tlsOptions: { rejectUnauthorized: false }
 });
 
 // Step 3: Program to receive emails. 
-/* This pretty much contains receiving emails, deciding which parts of email to receive,
-and what do display on console after execution of program */
  function openInbox(cb) {
   imap.openBox('INBOX', true, cb);
 }
@@ -26,7 +23,7 @@ and what do display on console after execution of program */
 
 openInbox(function(err, box) {
   if (err) throw err;
-  imap.search([ 'ALL', ['SINCE', 'June 15, 2018'] ], function(err, results) { 
+  imap.search([ 'ALL', ['SINCE', 'January 01, 2021'] ], function(err, results) { 
     console.log('Working')
     if (err) throw err;
     var f = imap.fetch(results, { bodies: '' });
@@ -66,6 +63,7 @@ imap.once('end', function() {
 
 imap.connect(); */
 
+//Fetch the 'date', 'from', 'to', 'subject' message headers and the message structure of the first 3 messages in the Inbox
 
 imap.once('ready', function() {
     openInbox(function(err, box) {
@@ -78,11 +76,15 @@ imap.once('ready', function() {
         console.log('Message #%d', seqno);
         var prefix = '(#' + seqno + ') ';
         msg.on('body', function(stream, info) {
+         //console.log(stream+'  stream')
           var buffer = '';
           stream.on('data', function(chunk) {
             buffer += chunk.toString('utf8');
+            //console.log(chunk + ' is chunk')
           });
           stream.once('end', function() {
+              //console.log(Imap.parseHeader(buffer)+ ' parser')
+              //console.log(inspect(Imap.parseHeader(buffer))+' is inspect')
             console.log(prefix + 'Parsed header: %s', inspect(Imap.parseHeader(buffer)));
           });
         });
